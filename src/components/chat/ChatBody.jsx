@@ -1,6 +1,8 @@
 import { Card, Row, Col } from 'react-bootstrap'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import moment from 'moment'
+import { BsTrashFill } from 'react-icons/bs'
+import { deleteMessage } from '../../actions/messagesActions' 
 
 export default function ChatBody(){
 
@@ -19,16 +21,20 @@ export default function ChatBody(){
 }
 
 const MessageCard = (props) => {
-
-    const { details: { message, date } } = props
+    
+    const { details: { message, date, id } } = props
     const { Body } = Card
+    const dispatch = useDispatch()
 
-    console.log(props)
+    const removeMessage = e => {
+        dispatch(deleteMessage(id))
+    }
 
     return(
         <Col sm='12'>
             <Card style={ cardStyles }>
                 <Body>
+                    <BsTrashFill style={ trashIcon } onClick={ removeMessage }/>
                     { message }
                     <span style={ dateStyle }>{ moment(date).format('MMM Do YY , h:mm:ss a') }</span>
                 </Body>
@@ -52,4 +58,12 @@ const dateStyle = {
     right: '1rem',
     fontSize: '.7rem',
     color: 'gray'
+}
+
+const trashIcon = {
+    position: 'absolute',
+    right: 10,
+    top: 10,
+    color: 'gray',
+    cursor: 'pointer'
 }

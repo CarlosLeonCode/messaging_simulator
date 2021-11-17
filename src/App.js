@@ -14,10 +14,10 @@ function App() {
     <Provider store={ store }>
       <Container className="py-5">
         <Row>
-          <Col sm="4">
+          <Col sm="12" md="12" lg="4" className="p-1">
             <Credits />
           </Col>
-          <Col sm="8">
+          <Col sm="12" md="12" lg="8" className="p-1">
             <Chat />
           </Col>
         </Row>

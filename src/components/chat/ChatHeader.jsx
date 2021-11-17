@@ -1,5 +1,5 @@
 import { Card, Row, Col, Image } from 'react-bootstrap'
-import personImg from '../../assets/img/homero_simps.jpg' 
+import personImg from '../../assets/img/elliot.jpg' 
 
 export default function ChatHeader(){
 
@@ -12,7 +12,7 @@ export default function ChatHeader(){
                     <Image src={ personImg } roundedCircle style={ imgStyle } />
                     <div style={ wpDescription }>
                         <div style={ description }>
-                            Homero Simpson
+                            Elliot Alderson | Mr.Robot
                             <span style={ userIndicator }>online</span>
                         </div>
                     </div>    
@@ -23,16 +23,17 @@ export default function ChatHeader(){
 }
 
 const imgStyle = {
-    width: '50px', 
-    height: '50px', 
+    width: '60px', 
+    height: '60px', 
     objectFit: 'cover', 
-    border: '1px solid lightgray',
     marginLeft: '1rem'
 }
 
 const wpDescription = {
     display: 'inline-block',
-    marginLeft: '1rem'
+    marginLeft: '1rem',
+    position: 'absolute',
+    top: 15
 }
 
 const description = {

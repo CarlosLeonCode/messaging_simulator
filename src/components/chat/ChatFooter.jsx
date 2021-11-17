@@ -56,10 +56,10 @@ export default function ChatFooter(){
                 date: moment()
             }))
             : console.error('You can send empty messages!')
-        cleanMessage()
+        cleanMessageToField()
     }
 
-    const cleanMessage = () => {
+    const cleanMessageToField = () => {
         // from state
         setMessage('')
 
@@ -78,7 +78,7 @@ export default function ChatFooter(){
         <Footer className="p-3">
             <Form onChange={ msmOnChange } onSubmit={ e => submitMsm(e) } >
                 <Row>
-                    <Col sm="1">
+                    <Col sm="2">
                         {
                             (showEmojisBox) 
                                 ? <Button style={ buttonStyles } type="button" onClick={() => toggleShowEmjsBox(false)}> <AiOutlineClose size={20} /> </Button>
@@ -94,7 +94,7 @@ export default function ChatFooter(){
                                 />
                         }
                     </Col>
-                    <Col sm="10">
+                    <Col sm="8">
                         <Group>
                             <Control 
                                 as="textarea" 
@@ -107,7 +107,7 @@ export default function ChatFooter(){
                         </Group>
                     </Col>
 
-                    <Col sm="1" className="d-flex justify-content-center">
+                    <Col sm="2" className="d-flex justify-content-center">
                         <Group>
                             <Button style={ buttonStyles } type="submit" >
                                 <AiOutlineSend size={25}/>
@@ -127,7 +127,6 @@ const controlStyles = {
     paddingRight: '1rem',
     paddingTop: '.8rem',
     paddingBottom: '.8rem',
-    outline: 'none',
     borderRadius: '30px',
     resize: 'none',
     overflow: 'hidden'

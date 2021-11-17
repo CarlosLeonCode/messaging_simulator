@@ -12,8 +12,6 @@ export default function Credits(){
     const date = new Date()
     const year = date.getFullYear()
 
-    console.log(emojisBox.show )
-
     return(
         <Card
             className="p-3"
@@ -60,13 +58,18 @@ export default function Credits(){
                 </Col>
                 <Col sm="12" style={{ borderTop: '1px solid lightgray', paddingTop: '1rem' }}> 
                     <Row>
-                        <Col sm="12">
-                            <FaLinkedinIn />
-                            <FaGithubAlt />
-                            <CgWebsite />
+                        <Col sm="12" style={{ display: 'flex', justifyContent: 'center' }}>
+                            <a href="https://co.linkedin.com/in/carlos-esteban-le%C3%B3n-pinilla-a646a9125?trk=profile-badge" target="_blank" rel="noreferrer">
+                                <FaLinkedinIn size="30" className="m-2" style={ mediaLink }/>
+                            </a>
+                            <a href="https://carlosleoncode.com/" target="_blank" style={ mediaLink } rel="noreferrer">
+                                <CgWebsite size="30" className="m-2"/>
+                            </a>
+                            <a href="https://github.com/CarlosLeonCode" target="_blank" style={ mediaLink } rel="noreferrer">
+                                <FaGithubAlt size="30" className="m-2"/>
+                            </a>
                         </Col>
-
-                        <Col sm="12">
+                        <Col sm="12 mt-2">
                             <p className="text-center text-muted" style={{ fontSize: '0.9rem' }}>Develop by Carlos León ©{year}</p>
                         </Col>
                     </Row>
@@ -82,4 +85,8 @@ const titleStyle = {
 
 const descriptionStyle = {
     fontSize: '0.9rem'
+}
+
+const mediaLink = {
+    color: 'gray'
 }

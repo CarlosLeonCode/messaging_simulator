@@ -1,7 +1,7 @@
 export const getStateFromStorage = key => {
     const data = localStorage.getItem(key)
     return (data === null)
-        ? null
+        ? undefined
         : JSON.parse(data)
 }
 
