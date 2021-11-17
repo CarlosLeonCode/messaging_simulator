@@ -78,7 +78,7 @@ export default function ChatFooter(){
         <Footer className="p-3">
             <Form onChange={ msmOnChange } onSubmit={ e => submitMsm(e) } >
                 <Row>
-                    <Col sm="2">
+                    <Col xs="2" md="2">
                         {
                             (showEmojisBox) 
                                 ? <Button style={ buttonStyles } type="button" onClick={() => toggleShowEmjsBox(false)}> <AiOutlineClose size={20} /> </Button>
@@ -94,7 +94,7 @@ export default function ChatFooter(){
                                 />
                         }
                     </Col>
-                    <Col sm="8">
+                    <Col xs="8" md="8">
                         <Group>
                             <Control 
                                 as="textarea" 
@@ -107,7 +107,7 @@ export default function ChatFooter(){
                         </Group>
                     </Col>
 
-                    <Col sm="2" className="d-flex justify-content-center">
+                    <Col xs="2" md="2" className="d-flex justify-content-center">
                         <Group>
                             <Button style={ buttonStyles } type="submit" >
                                 <AiOutlineSend size={25}/>
